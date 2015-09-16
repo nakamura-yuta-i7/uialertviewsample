@@ -16,11 +16,13 @@ class ViewController: UIViewController {
             message: "New to iOS 8",
             preferredStyle: .Alert)
         
+        func defaultFunc(action: UIAlertAction!) {
+            let textField0 = normalAlert.textFields![0] as! UITextField
+            println("String \"\(textField0.text)\" typed in.")
+        }
         let defaultAction = UIAlertAction(title: "Gotcha",
             style: .Cancel,
-            handler: {
-                action in println("Pushed Button: \(action.title)")
-            })
+            handler: defaultFunc)
         normalAlert.addAction(defaultAction)
         
         let otherAction1 = UIAlertAction(title: "Other 1",
